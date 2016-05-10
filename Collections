@@ -1,0 +1,124 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+//List- Use a Zero-based index, can contain duplicates
+//Map- Uses a Key and a Value. Can store a Value and retrieve with the Key.
+//Set- Cannot contain Duplicates
+//Tree- Sorts in Ascending Order,  
+
+
+public class CollectionsTest {
+
+	public static void main(String args[]) {
+		    
+		// Create a Arraylist
+	       List a1 = new ArrayList();
+	       a1.add("Goku");
+	       a1.add("Vegeta");
+	       a1.add("Krillin");
+	       System.out.println("ArrayList Elements");
+	       System.out.println(a1);
+	       
+	       //Nasty Path
+	    //add null
+	       //insert happy path
+	       //insert 10 at 3 long
+	       try{a1.remove(null);
+	      
+	    }
+	       catch(IndexOutOfBoundsException e){
+	    	   e.printStackTrace();
+	    	   System.out.println("\n" + "When this doesn't work this will print out");
+	    	   
+	       }
+	      
+	       // Create a HashMap
+	       Map b1 = new HashMap();
+	       b1.put("Goku", "KaMeHaMeHa");
+	       b1.put("Vegeta", "Galick Gun");
+	       b1.put("Krillin", "Distructo Disc");
+	       b1.put("Piccolo", "Special Beam Cannon");
+	       System.out.println();
+	       System.out.println("Map Elements");
+	       System.out.print(b1);
+	       
+	       //Nasty Path
+	       Map dbz = new HashMap();
+	       dbz.put("Vegeta", "Over 9000");
+	       dbz.remove("Goku", "I'm Strong");
+	       System.out.println(dbz);
+	     
+	     //nasty path null for key, null value, remove something not their, get method, get null
+	       //Union 
+	     //Create HashMap One
+	       Map<String, String> first = new HashMap<String, String>();
+	       //Create HashMap Two
+	        Map<String, String> second = new HashMap<String, String>();
+	        //Create Union of he two HashMaps
+	        Map<String, String> union = new HashMap<String, String>();
+	        //Key, Value in the first HashMap
+	        first.put("Goku", "KaMeHaMeHa" );
+	        first.put("Piccolo", "Special Beam Cannon");
+	        //Key, Value in the second HashMap
+	        second.put("Vegeta", "Galikc Gun");
+	        second.put("Nappa", "Bomber DX");
+	        //Use Union for the Key, Value in HashMap 1&2
+	        union.putAll(first);
+	        union.putAll(second);
+	        //Print Out Union
+	        System.out.println("\n");
+	        System.out.println("Union of HashMaps");
+	        System.out.println(union);
+	        System.out.println(union.keySet());
+	        System.out.println(union.values());
+	       
+	       //Create a TreeSet
+	       TreeSet  c1 = new TreeSet();
+	       c1.add("Goku");
+	       c1.add("Vegeta");
+	       c1.add("Krillin");
+	       System.out.println("\n");
+	       System.out.println("TreeSet Elements");
+	       System.out.println(c1);
+	       
+	       //NastyPath, union, intersection, relative complement
+	       /*A Set can't contain duplicates so since there are two Yusuke's in the set, when it prints
+	       it only shows one Yusuke */
+	       Set e1 = new TreeSet();
+	       e1.add("Yusuke");
+	       e1.add("Kuwabara");
+	       e1.add("Yusuke");
+	       System.out.println(e1);
+	       
+	       //Union
+	       Set<String> s1 = new TreeSet<String>();
+	       Set<String>s2 = new TreeSet<String>();
+	       Set<String> union1 = new TreeSet<String>();
+	       s1.add("Ichigo");
+	       s2.add("Strawberry");
+	       union1.addAll(s1);
+	       union1.addAll(s2);
+	       System.out.println(union1);
+	       
+	       
+	      //nasty path, key values null, get null 
+	       TreeMap d1 = new TreeMap();
+	       d1.put("Uzamaki, Naruto", "Rasengan");
+	       d1.put("Uchiha, Sasuke", "Chidori");
+	       d1.put("Haruno, Sakura", "Cherry Blossom");
+	       d1.put("Nara, Shikamaru", null);
+	       System.out.println("\n");
+	       System.out.println("TreeMap Elements");
+	       System.out.println(d1);         
+	}
+}
+
+
+	       
+	      
+	     
